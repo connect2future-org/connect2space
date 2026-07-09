@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Ananya Roy",
+    "role": "Podcast Host",
+    "text": "Connect2Space has the best podcast studio in Mumbai. The acoustics are perfect and the team is super supportive.",
+    "avatar": "/images/avatar1.jpg"
+  },
+  {
+    "name": "Vikram Patel",
+    "role": "Startup Founder",
+    "text": "We launched our product from this space. The co‑working vibe is electric and the amenities are top‑notch.",
+    "avatar": "/images/avatar2.jpg"
+  },
+  {
+    "name": "Sana Khan",
+    "role": "Photographer",
+    "text": "The studio lighting and backdrop options are incredible. I always get the perfect shot here.",
+    "avatar": "/images/avatar3.jpg"
+  }
+]

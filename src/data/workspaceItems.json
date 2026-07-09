@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "title": "Podcast Studio",
+    "description": "Soundproof room with industry-grade recording gear.",
+    "image": "/images/pic1.png",
+    "price": "Custom Quote",
+    "features": ["Soundproof", "RØDE mixers", "Shure mics"]
+  },
+  {
+    "id": 2,
+    "title": "Creative Studio",
+    "description": "Versatile studio for video, photo, and live streaming.",
+    "image": "/images/pic2.png",
+    "price": "₹300/hour",
+    "features": ["Cyclorama wall", "LED lights", "Green screen"]
+  },
+  {
+    "id": 3,
+    "title": "Meeting Room",
+    "description": "Executive boardroom with 75\" display and telepresence.",
+    "image": "/images/pic2.png", 
+    "price": "₹500/hour",
+    "features": ["4K screen", "Conferencing", "Whiteboard"]
+  },
+  {
+    "id": 4,
+    "title": "Co-working Space",
+    "description": "Open-plan workspace with hot desks and lounge areas.",
+    "image": "/images/pic1.png",  
+    "price": "₹299/day",
+    "features": ["WiFi", "Coffee", "Lockers"]
+  }
+]

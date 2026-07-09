@@ -1,0 +1,86 @@
+/* ==========================================================
+   UTILITIES (polished)
+   ========================================================== */
+
+/* Glass card */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--glass-border);
+  border-radius: 28px;
+  padding: 28px;
+  box-shadow: var(--glass-shadow);
+  transition: all 0.4s ease;
+}
+.glass-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(184, 77, 255, 0.25);
+  box-shadow: 0 15px 40px rgba(184, 77, 255, 0.15);
+}
+
+/* Icon box */
+.icon-box {
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(184, 77, 255, 0.2), rgba(255, 79, 174, 0.15));
+  font-size: 1.5rem;
+  color: white;
+  transition: 0.3s;
+}
+.icon-box:hover {
+  transform: rotate(-5deg) scale(1.05);
+}
+
+/* Floating */
+.float {
+  animation: floatAnim 6s ease-in-out infinite;
+}
+@keyframes floatAnim {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Hover lift */
+.hover-lift { transition: 0.3s ease; }
+.hover-lift:hover { transform: translateY(-6px); }
+
+/* Gradient border */
+.gradient-border {
+  position: relative;
+  border-radius: 28px;
+}
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, #FF4FAE, #B84DFF, #60A5FA);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Shadows */
+.shadow-pink { box-shadow: 0 15px 40px rgba(255, 79, 174, 0.2); }
+.shadow-purple { box-shadow: 0 15px 40px rgba(184, 77, 255, 0.2); }
+.shadow-cyan { box-shadow: 0 15px 40px rgba(56, 189, 248, 0.15); }
+
+/* Spacing helpers (optional) */
+.spacing-xs { gap: var(--space-xs); }
+.spacing-sm { gap: var(--space-sm); }
+.spacing-md { gap: var(--space-md); }
+.spacing-lg { gap: var(--space-lg); }
+.spacing-xl { gap: var(--space-xl); }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .glass-card { padding: 20px; }
+  .icon-box { width: 56px; height: 56px; font-size: 1.2rem; }
+}

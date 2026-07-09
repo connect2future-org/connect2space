@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Studio Space",
+    "description": "Fully equipped studio for photoshoots, video production, and creative sessions.",
+    "icon": "FaCamera"
+  },
+  {
+    "title": "Podcast Recording",
+    "description": "Professional podcast studio with high-end microphones, mixers, and soundproofing.",
+    "icon": "FaMicrophone"
+  },
+  {
+    "title": "Co-working",
+    "description": "Inspirational co-working space with high-speed WiFi, ergonomic seating, and coffee.",
+    "icon": "FaUsers"
+  },
+  {
+    "title": "Meeting Rooms",
+    "description": "Modern meeting rooms equipped with 4K displays, video conferencing, and whiteboards.",
+    "icon": "FaCalendarCheck"
+  },
+  {
+    "title": "Photography",
+    "description": "Dedicated photography area with professional lighting, backdrops, and props.",
+    "icon": "FaCameraRetro"
+  },
+  {
+    "title": "Events",
+    "description": "Versatile event space for product launches, workshops, and networking events.",
+    "icon": "FaCalendarAlt"
+  }
+]

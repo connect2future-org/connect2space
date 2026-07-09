@@ -1,0 +1,179 @@
+/* ==========================================================
+   CONNECT2SPACE TYPOGRAPHY SYSTEM
+   ========================================================== */
+
+/* Hero Title */
+.heading-xl {
+  font-family: "Sora", sans-serif;
+  font-size: clamp(3.8rem, 7vw, 6.8rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -3px;
+  color: #fff;
+  margin-bottom: 28px;
+}
+
+/* Page Heading */
+.heading-lg {
+  font-family: "Sora", sans-serif;
+  font-size: clamp(2.6rem, 5vw, 4.3rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  color: white;
+}
+
+/* Section Title */
+.heading-md {
+  font-family: "Sora", sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: white;
+}
+
+/* Card Title */
+.heading-sm {
+  font-family: "Sora", sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: white;
+}
+
+/* Body Text */
+.text {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: #CBD5E1;
+}
+.text-lg {
+  font-size: 1.15rem;
+  line-height: 2;
+  color: #CBD5E1;
+}
+.text-sm {
+  font-size: 0.92rem;
+  line-height: 1.8;
+  color: #CBD5E1;
+}
+
+/* Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.4rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #D946EF;
+  margin-bottom: 28px;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(90deg, #D946EF, #A855F7, #38BDF8, #FF006E);
+  background-size: 300%;
+  animation: textGradient 8s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+@keyframes textGradient {
+  0% { background-position: 0%; }
+  100% { background-position: 300%; }
+}
+
+/* Lead paragraph */
+.lead {
+  max-width: 720px;
+  font-size: 1.15rem;
+  line-height: 2;
+  color: #CBD5E1;
+}
+
+/* Section Header */
+.section-header .heading-md {
+  margin-bottom: 20px;
+}
+.section-header p {
+  color: #CBD5E1;
+}
+
+/* Highlight */
+.highlight {
+  color: #D946EF;
+}
+
+/* Link underline */
+.link {
+  position: relative;
+  color: white;
+  transition: 0.3s;
+}
+.link:hover {
+  color: #D946EF;
+}
+.link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #D946EF, #38BDF8);
+  transition: 0.35s;
+}
+.link:hover::after {
+  width: 100%;
+}
+
+/* Stats */
+.stat-number {
+  font-family: "Sora", sans-serif;
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1;
+  color: white;
+}
+.stat-label {
+  color: #CBD5E1;
+  margin-top: 12px;
+}
+
+/* Small label */
+.label {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 700;
+  color: #D946EF;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .heading-xl { font-size: 4rem; }
+  .heading-lg { font-size: 3rem; }
+  .heading-md { font-size: 2.3rem; }
+  .lead { font-size: 1.05rem; }
+}
+@media (max-width: 768px) {
+  .heading-xl { font-size: 3rem; line-height: 1.05; letter-spacing: -1px; }
+  .heading-lg { font-size: 2.4rem; }
+  .heading-md { font-size: 2rem; }
+  .heading-sm { font-size: 1.2rem; }
+  .text-lg { font-size: 1rem; }
+  .lead { font-size: 1rem; line-height: 1.9; }
+  .section-header { margin-bottom: 50px; }
+}
+@media (max-width: 480px) {
+  .heading-xl { font-size: 2.5rem; }
+  .heading-lg { font-size: 2rem; }
+  .heading-md { font-size: 1.8rem; }
+  .badge { font-size: 0.72rem; padding: 0.55rem 1.2rem; }
+}

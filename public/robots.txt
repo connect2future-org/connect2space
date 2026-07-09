@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://connect2space.in/sitemap.xml

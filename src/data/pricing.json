@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Studio",
+    "price": "₹300/hour",
+    "features": ["Flexible time slots", "Professional lighting", "Backgrounds", "Tech support"],
+    "cta": "Book Now"
+  },
+  {
+    "title": "Podcast Studio",
+    "price": "Custom Quote",
+    "features": ["High-end audio gear", "Sound isolation", "Editing room access", "Producer assistance"],
+    "cta": "Enquire"
+  },
+  {
+    "title": "Meeting Room",
+    "price": "₹500/hour",
+    "features": ["High-speed WiFi", "4K display", "Video conferencing", "Catering available"],
+    "cta": "Book Now"
+  },
+  {
+    "title": "Co-working",
+    "price": "₹299/day",
+    "features": ["Comfortable seating", "Unlimited coffee", "Power outlets", "Community events"],
+    "cta": "Join Now"
+  }
+]
