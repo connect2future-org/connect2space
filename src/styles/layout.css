@@ -1,5 +1,5 @@
 /* ==========================================================
-   LAYOUT SYSTEM – SPACING REFINED
+   LAYOUT SYSTEM – RESPONSIVE SPACING REFINED
    ========================================================== */
 
 .container {
@@ -15,7 +15,7 @@
   margin-inline: auto;
 }
 
-/* Section spacing – reduced for better rhythm */
+/* Section spacing */
 .section {
   padding-block: 80px;
   background: transparent;
@@ -85,4 +85,10 @@
   .section { padding-block: 50px; }
   .hero { padding-top: 90px; min-height: auto; }
   .section-header { margin-bottom: 40px; }
+  .section-header h2 { font-size: 2rem; }
+}
+@media (max-width: 480px) {
+  .container { width: calc(100% - 20px); }
+  .section { padding-block: 40px; }
+  .hero { padding-top: 80px; }
 }

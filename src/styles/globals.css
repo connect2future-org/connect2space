@@ -342,3 +342,23 @@ footer {
 #contact {
   scroll-margin-top: 100px; /* Adjust to match navbar height */
 /* } */
+/* --- Disable custom cursor on touch devices --- */
+@media (pointer: coarse) {
+  .cursor-glow,
+  .mouse-spotlight {
+    display: none !important;
+  }
+  html,
+  body {
+    cursor: auto !important;
+  }
+  a,
+  button {
+    cursor: pointer !important;
+  }
+}
+
+/* --- Ensure iframes are lazy-loaded --- */
+iframe {
+  loading: lazy;
+}

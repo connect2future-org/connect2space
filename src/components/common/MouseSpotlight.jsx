@@ -1,46 +1,26 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 
 const MouseSpotlight = () => {
-
-  const [mouse, setMouse] = useState({
-    x: 0,
-    y: 0,
-  });
+  const spotlightRef = useRef(null);
 
   useEffect(() => {
-
-    const move = (e) => {
-
-      setMouse({
-        x: e.clientX,
-        y: e.clientY,
-      });
-
+    const onMouseMove = (e) => {
+      if (spotlightRef.current) {
+        spotlightRef.current.style.left = e.clientX + "px";
+        spotlightRef.current.style.top = e.clientY + "px";
+      }
     };
 
-    window.addEventListener("mousemove", move);
-
-    return () =>
-      window.removeEventListener("mousemove", move);
-
+    document.addEventListener("mousemove", onMouseMove);
+    return () => document.removeEventListener("mousemove", onMouseMove);
   }, []);
 
   return (
-
     <div
-
-      className="pointer-events-none fixed inset-0 z-0"
-
-      style={{
-        background: `radial-gradient(circle 350px at ${mouse.x}px ${mouse.y}px,
-        rgba(217,70,239,.10),
-        transparent 70%)`,
-      }}
-
+      ref={spotlightRef}
+      className="mouse-spotlight fixed pointer-events-none z-0 w-[600px] h-[600px] rounded-full bg-gradient-to-r from-pink-500/5 via-purple-500/5 to-cyan-500/5 blur-3xl transform -translate-x-1/2 -translate-y-1/2"
     />
-
   );
-
 };
 
 export default MouseSpotlight;

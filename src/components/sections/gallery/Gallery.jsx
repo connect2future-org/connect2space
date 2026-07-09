@@ -8,33 +8,30 @@ const Gallery = () => {
   return (
     <section id="gallery" className="section bg-secondary/5">
       <div className="container relative">
-        {/* --- MASCOTS (absolute, decorative) --- */}
-        {/* Female mascot – left side */}
-        <div className="hidden md:block absolute left-[7%] top-[20px] z-0 pointer-events-none">
+        {/* Mascots – hidden on mobile, smaller on tablet */}
+        <div className="hidden md:block absolute left-[5%] lg:left-[7%] top-[60px] lg:top-[20px] z-0 pointer-events-none">
           <motion.img
             src={femaleMascot}
             alt=""
-            className="w-[220px] h-auto object-contain"
+            className="w-[140px] lg:w-[220px] h-auto object-contain"
             animate={{ y: [0, -8, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            loading="lazy"
           />
         </div>
 
-        {/* Male mascot – right side (moved further up with negative top) */}
-        <div
-          className="hidden md:block absolute left-auto right-[7%] z-0 pointer-events-none"
-          style={{ top: '-30px' }}
-        >
+        <div className="hidden md:block absolute right-[5%] lg:right-[7%] top-[60px] lg:top-[20px] z-0 pointer-events-none">
           <motion.img
             src={maleMascot}
             alt=""
-            className="w-[230px] h-auto object-contain"
+            className="w-[150px] lg:w-[230px] h-auto object-contain"
             animate={{ y: [0, -8, 0] }}
             transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+            loading="lazy"
           />
         </div>
 
-        {/* --- ORIGINAL GALLERY CONTENT (completely untouched) --- */}
+        {/* Original content unchanged */}
         <div className="section-header">
           <span className="badge">Gallery</span>
           <h2 className="heading-lg">Our <span className="gradient-text">Spaces</span></h2>
