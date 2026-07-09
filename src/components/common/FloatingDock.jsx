@@ -13,10 +13,23 @@ import { WHATSAPP_URL, PHONE_LINK } from "../../utils/contact";
 const FloatingDock = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => setIsOpen(!isOpen);
-  const closeMenu = () => setIsOpen(false);
+  const toggleMenu = () => {
+    const newState = !isOpen;
+    setIsOpen(newState);
+    // Toggle a class on the body to hide BackToTop when FAB is open
+    if (newState) {
+      document.body.classList.add("fab-open");
+    } else {
+      document.body.classList.remove("fab-open");
+    }
+  };
 
-  // Desktop: show four separate icons (unchanged)
+  const closeMenu = () => {
+    setIsOpen(false);
+    document.body.classList.remove("fab-open");
+  };
+
+  // Desktop: four separate icons
   const DesktopIcons = () => (
     <div className="hidden md:flex flex-col gap-3">
       <a
@@ -64,7 +77,7 @@ const FloatingDock = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.8 }}
             transition={{ duration: 0.2 }}
-            className="mb-3 glass rounded-2xl p-3 shadow-xl backdrop-blur-xl border border-white/10 flex flex-col gap-2"
+            className="mb-3 glass rounded-2xl p-3 shadow-xl backdrop-blur-xl border border-white/10 flex flex-col gap-2 min-w-[140px]"
           >
             <a
               href={WHATSAPP_URL}

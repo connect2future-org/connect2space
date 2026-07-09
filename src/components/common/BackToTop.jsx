@@ -7,7 +7,7 @@ const BackToTop = () => {
 
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.scrollY > 300) {
+      if (window.scrollY > 500) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
@@ -30,10 +30,10 @@ const BackToTop = () => {
           exit={{ opacity: 0, scale: 0.8 }}
           transition={{ duration: 0.3 }}
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 z-50 glass p-3 rounded-full hover:shadow-pink transition-all duration-300 hover:scale-110"
+          className="back-to-top fixed bottom-[88px] md:bottom-24 right-4 md:right-6 z-40 glass p-3 rounded-full hover:shadow-pink transition-all duration-300 hover:scale-110"
           aria-label="Back to top"
         >
-          <FaArrowUp className="text-primary text-xl" />
+          <FaArrowUp className="text-primary text-xl md:text-2xl" />
         </motion.button>
       )}
     </AnimatePresence>

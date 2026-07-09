@@ -362,3 +362,23 @@ footer {
 iframe {
   loading: lazy;
 }
+/* --- Mobile safe area & FAB/BackToTop layout --- */
+
+/* Add bottom padding to avoid content being hidden by floating buttons */
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 100px; /* Space for FAB + BackToTop */
+  }
+}
+
+/* Hide BackToTop when FAB is expanded */
+body.fab-open .back-to-top {
+  display: none !important;
+}
+
+/* Ensure no horizontal scrolling on any device */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
