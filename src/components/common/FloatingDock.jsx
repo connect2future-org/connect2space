@@ -16,7 +16,6 @@ const FloatingDock = () => {
   const toggleMenu = () => {
     const newState = !isOpen;
     setIsOpen(newState);
-    // Toggle a class on the body to hide BackToTop when FAB is open
     if (newState) {
       document.body.classList.add("fab-open");
     } else {
@@ -29,9 +28,9 @@ const FloatingDock = () => {
     document.body.classList.remove("fab-open");
   };
 
-  // Desktop: four separate icons
+  // --- DESKTOP / TABLET: original floating circular icons (hidden on mobile) ---
   const DesktopIcons = () => (
-    <div className="hidden md:flex flex-col gap-3">
+    <div className="hidden md:flex flex-col gap-3 fixed bottom-24 right-6 z-50">
       <a
         href={WHATSAPP_URL}
         target="_blank"
@@ -67,7 +66,7 @@ const FloatingDock = () => {
     </div>
   );
 
-  // Mobile: FAB with expandable menu
+  // --- MOBILE ONLY: expandable Floating Action Button ---
   const MobileFab = () => (
     <div className="md:hidden fixed bottom-6 right-4 z-50 flex flex-col items-end">
       <AnimatePresence>
