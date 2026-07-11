@@ -382,3 +382,14 @@ body {
   overflow-x: hidden;
   max-width: 100vw;
 }
+/* --- Mobile fix: push Hero down so the tagline clears the navbar --- */
+@media (max-width: 767px) {
+  .hero {
+    padding-top: 120px !important;
+  }
+
+  /* Also remove any top margin from the badge inside the hero */
+  .hero-content .badge {
+    margin-top: 0 !important;
+  }
+}
