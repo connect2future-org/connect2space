@@ -21,7 +21,7 @@ const Navbar = () => {
     <>
       <header
         className={`fixed top-0 left-0 w-full z-[9999] transition-all duration-500 ${
-          scrolled ? "py-2" : "py-3"
+          scrolled ? "py-1 md:py-2" : "py-2 md:py-3"
         }`}
       >
         <div className="container">
@@ -31,36 +31,40 @@ const Navbar = () => {
               rounded-full
               border border-white/10
               flex items-center justify-between
-              px-6 lg:px-8
-              h-[80px] lg:h-[90px]
+              px-4 md:px-6 lg:px-8
+              h-[56px] md:h-[80px] lg:h-[90px]
               transition-all duration-500
               ${scrolled ? "shadow-[0_10px_30px_rgba(0,0,0,0.5)]" : "shadow-none"}
             `}
           >
-            <Link to="/" className="flex items-center gap-3 select-none">
+            {/* Logo – smaller on mobile */}
+            <Link to="/" className="flex items-center gap-2 md:gap-3 select-none">
               <img
                 src={logo}
                 alt="Connect2Space"
-                className="h-[80px] md:h-[150px] w-auto object-contain"
+                className="h-9 md:h-16 lg:h-20 w-auto object-contain"
               />
             </Link>
 
+            {/* Desktop Menu */}
             <div className="hidden lg:flex items-center">
               <DesktopMenu />
             </div>
 
+            {/* Right CTA – Book Tour */}
             <div className="hidden lg:flex items-center gap-4">
               <Link
                 to="/#contact"
                 className="btn btn-primary text-sm px-6 py-2"
               >
-                Book your Space
+                Book a Tour
               </Link>
             </div>
 
+            {/* Mobile toggle – smaller on mobile */}
             <button
               onClick={() => setOpen(!open)}
-              className="lg:hidden w-10 h-10 rounded-full glass flex items-center justify-center text-lg transition duration-300 hover:scale-110"
+              className="lg:hidden w-8 h-8 md:w-10 md:h-10 rounded-full glass flex items-center justify-center text-base md:text-lg transition duration-300 hover:scale-110"
             >
               {open ? <FaTimes /> : <FaBars />}
             </button>
