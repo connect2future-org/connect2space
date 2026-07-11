@@ -3,7 +3,7 @@ import { FaUsers, FaBuilding, FaMicrophone, FaWifi } from "react-icons/fa";
 
 const stats = [
   { icon: <FaUsers />, value: "500+", label: "Creators" },
-  { icon: <FaBuilding />, value: "24/7", label: "Workspace Access" },
+  { icon: <FaBuilding />, value: "10-6pm", label: "Workspace Access" },
   { icon: <FaMicrophone />, value: "Studio", label: "Podcast Setup" },
   { icon: <FaWifi />, value: "High Speed", label: "Internet" },
 ];

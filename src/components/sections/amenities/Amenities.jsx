@@ -6,7 +6,7 @@ const amenitiesData = [
   { icon: FaCoffee, title: "Coffee & Tea Bar", desc: "Premium coffee, teas, and refreshments all day." },
   { icon: FaChair, title: "Standing Desks", desc: "Ergonomic sit-stand desks for your comfort." },
   { icon: FaMicrophone, title: "Podcast Equipment", desc: "Professional mics, mixers, and soundproofing." },
-  { icon: FaClock, title: "24/7 Access", desc: "Round-the-clock entry for members." },
+  { icon: FaClock, title: "10-6pm Access", desc: "Round-the-clock entry for members." },
   { icon: FaHeadset, title: "On-site Support", desc: "Dedicated staff to assist you anytime." },
 ];
 

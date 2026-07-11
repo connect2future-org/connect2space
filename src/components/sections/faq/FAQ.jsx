@@ -4,7 +4,7 @@ import { FaPlus, FaMinus } from "react-icons/fa";
 
 const FAQ = () => {
   const faqs = [
-    { q: "What are the operating hours?", a: "We are open 24/7 for members with 24/7 access." },
+    { q: "What are the operating hours?", a: "We are open 10-6pm for members with access." },
     { q: "Can I book a room for a day?", a: "Yes, you can book meeting rooms and studios by the hour or day." },
     { q: "Is there parking available?", a: "Yes, we have dedicated parking for members and guests." },
     { q: "Do you offer virtual office services?", a: "Yes, we provide mail handling and virtual reception." },
