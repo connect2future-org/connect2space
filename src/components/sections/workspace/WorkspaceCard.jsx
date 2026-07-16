@@ -39,7 +39,7 @@ const WorkspaceCard = ({ item, reverse }) => {
             rel="noreferrer"
             className="btn-primary flex items-center gap-2 text-sm px-5 py-2.5 rounded-full hover:shadow-lg hover:shadow-purple-500/30 transition"
           >
-            Book Your Space Now !! <FaArrowRight />
+            Book Your Space <FaArrowRight />
           </a>
         </div>
       </div>

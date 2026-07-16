@@ -16,7 +16,7 @@ const HeroButtons = () => {
         href="#contact"
         className="btn btn-primary text-sm"
       >
-        Book your Space <FaArrowRight />
+        Book Your Space <FaArrowRight />
       </motion.a>
       <motion.a
         whileHover={{ scale: 1.04, y: -2 }}

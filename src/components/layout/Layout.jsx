@@ -8,6 +8,7 @@ import CursorGlow from "../common/CursorGlow";
 import ScrollProgress from "../common/ScrollProgress";
 import PageLoader from "../common/PageLoader";
 import BackToTop from "../common/BackToTop";
+import CookieConsent from "../common/CookieConsent";
 import { motion } from "framer-motion";
 
 const Layout = ({ children }) => {
@@ -37,7 +38,6 @@ const Layout = ({ children }) => {
       {/* Background layers */}
       <div className="background-vignette" />
       <BackgroundGrid />
-      
 
       {/* Mouse glow */}
       <div
@@ -50,16 +50,14 @@ const Layout = ({ children }) => {
       <CursorGlow />
       <ScrollProgress />
       <MouseSpotlight />
+      <FloatingDock />
 
       <Navbar />
       <main>{children}</main>
       <Footer />
 
-      {/* Floating Dock – contains WhatsApp, Instagram, Call, Mail */}
-      <FloatingDock />
-
-      {/* Back to Top button – scroll-to-top arrow */}
       <BackToTop />
+      <CookieConsent />
     </div>
   );
 };

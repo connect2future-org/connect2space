@@ -1,5 +1,5 @@
 /* ==========================================================
-   LAYOUT SYSTEM – RESPONSIVE SPACING REFINED
+   LAYOUT SYSTEM – NO HERO PADDING-TOP OVERRIDES
    ========================================================== */
 
 .container {
@@ -15,18 +15,17 @@
   margin-inline: auto;
 }
 
-/* Section spacing */
 .section {
-  padding-block: 80px;
+  padding-block: 40px;
   background: transparent;
 }
 .section:first-child {
   padding-top: 0;
 }
-.section-sm { padding-block: 50px; }
-.section-lg { padding-block: 100px; }
+.section-sm { padding-block: 25px; }
+.section-lg { padding-block: 50px; }
 
-/* Hero */
+/* Hero – NO padding-top here, handled by inline style */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -34,11 +33,9 @@
   position: relative;
   overflow: hidden;
   background: transparent;
-  padding-top: 120px;
-  padding-bottom: 40px;
+  padding-bottom: 30px;
 }
 
-/* Grids */
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -56,39 +53,34 @@
   gap: 24px;
 }
 
-/* Section Header */
 .section-header {
   max-width: 720px;
   margin-inline: auto;
-  margin-bottom: 56px;
+  margin-bottom: 30px;
   text-align: center;
 }
 .section-header h2 {
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 .section-header p {
   color: var(--text-muted);
   font-size: 1.05rem;
 }
 
-/* Responsive */
 @media (max-width: 1024px) {
   .grid-2 { grid-template-columns: 1fr; gap: 50px; }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
-  .section { padding-block: 60px; }
-  .hero { padding-top: 100px; }
+  .section { padding-block: 30px; }
 }
 @media (max-width: 768px) {
   .container { width: calc(100% - 32px); }
   .grid-3, .grid-4 { grid-template-columns: 1fr; }
-  .section { padding-block: 50px; }
-  .hero { padding-top: 90px; min-height: auto; }
-  .section-header { margin-bottom: 40px; }
+  .section { padding-block: 25px; }
+  .section-header { margin-bottom: 25px; }
   .section-header h2 { font-size: 2rem; }
 }
 @media (max-width: 480px) {
   .container { width: calc(100% - 20px); }
-  .section { padding-block: 40px; }
-  .hero { padding-top: 80px; }
+  .section { padding-block: 20px; }
 }
