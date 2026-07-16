@@ -1,4 +1,4 @@
-import 'dotenv/config'; // Load environment variables first
+import 'dotenv/config';
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
@@ -7,34 +7,57 @@ import connectDB from "./config/db.js";
 import contactRoutes from "./routes/contactRoutes.js";
 import errorHandler from "./middleware/errorHandler.js";
 
-// Debug: check if MONGO_URI is loaded
-console.log("MONGODB_URI:", process.env.MONGODB_URI ? "✅ Loaded" : "❌ Missing");
+// Check environment
+console.log(
+  "MONGODB_URI:",
+  process.env.MONGODB_URI ? "✅ Loaded" : "❌ Missing"
+);
 
-// Connect to MongoDB
+// Connect Database
 connectDB();
 
 const app = express();
 
 // Security
 app.use(helmet());
-app.use(cors());
+
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      process.env.CLIENT_URL,
+    ],
+    credentials: true,
+  })
+);
+
 app.use(express.json({ limit: "10kb" }));
 
-// Rate limiting
+// Rate Limiter
 const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
+  windowMs: 15 * 60 * 1000,
   max: 100,
   message: "Too many requests from this IP, please try again later.",
 });
+
 app.use("/api", limiter);
 
-// Routes
+// Root Route
+app.get("/", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "🚀 Connect2Space Backend is Live",
+  });
+});
+
+// API Routes
 app.use("/api/contact", contactRoutes);
 
-// Error handler
+// Error Handler
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
+
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
 });
