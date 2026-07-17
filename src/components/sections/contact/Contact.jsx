@@ -15,7 +15,7 @@ const Contact = () => {
         >
           <span className="badge">Contact</span>
           <h2 className="heading-lg">Get in <span className="gradient-text">Touch</span></h2>
-          <p className="text-lg text-muted">We’d love to hear from you. Reach out anytime.</p>
+          <p className="text-lg text-muted">We'd love to hear from you. Reach out anytime.</p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -67,19 +67,19 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Google Map */}
+            {/* Google Map – updated with new location */}
             <div className="glass p-2 rounded-3xl overflow-hidden h-[220px] md:h-[260px]">
               <iframe
                 title="Connect2Space Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3898.4567!2d76.6345!3d12.2956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDE3JzQ0LjIiTiA3NsKwMzgnMDQuMiJF!5e0!3m2!1sen!2sin!4v1620000000000"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3898.0901449305525!2d76.60385439678956!3d12.309716000000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baf7b0050ce1873%3A0xe6c2f3909d626076!2sConnect2future!5e0!3m2!1sen!2sin!4v1784274400038!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0, borderRadius: '20px' }}
                 allowFullScreen=""
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
+                referrerPolicy="strict-origin-when-cross-origin"
                 className="rounded-2xl"
-              ></iframe>
+              />
             </div>
           </div>
         </div>
