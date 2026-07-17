@@ -1,25 +1,32 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const CookieConsent = () => {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const consent = localStorage.getItem("cookieConsent");
-    if (!consent) {
-      setVisible(true);
-    }
-  }, []);
+  const [visible, setVisible] = useState(true);
 
   const handleAccept = () => {
-    localStorage.setItem("cookieConsent", "accepted");
     setVisible(false);
+    // Optionally store in sessionStorage to hide for the current session
+    sessionStorage.setItem('cookieConsent', 'accepted');
   };
 
   const handleDecline = () => {
-    localStorage.setItem("cookieConsent", "declined");
     setVisible(false);
+    sessionStorage.setItem('cookieConsent', 'declined');
   };
+
+  // If you want to persist across sessions, you can keep localStorage,
+  // but the user asked to show on every visit, so we don't check storage on load.
+  // But we might want to hide it after accept for the current session.
+  // We'll check sessionStorage so it doesn't reappear on every page reload within same session.
+
+  // Actually, to truly show on every visit, we should not check any storage.
+  // But we can check sessionStorage to avoid showing again on the same session.
+  // Let's implement: show by default, but if sessionStorage has a value, hide.
+
+  // To keep it showing every visit (new session), we can just use state.
+
+  // We'll keep it simple: always show on first load, and close on accept/decline.
 
   return (
     <AnimatePresence>

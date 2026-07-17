@@ -10,6 +10,7 @@ import PageLoader from "../common/PageLoader";
 import BackToTop from "../common/BackToTop";
 import CookieConsent from "../common/CookieConsent";
 import { motion } from "framer-motion";
+import InstallButton from '../common/InstallButton';
 
 const Layout = ({ children }) => {
   const glowRef = useMouseGlow();
@@ -51,13 +52,14 @@ const Layout = ({ children }) => {
       <ScrollProgress />
       <MouseSpotlight />
       <FloatingDock />
-
+      <InstallButton />
       <Navbar />
       <main>{children}</main>
       <Footer />
 
       <BackToTop />
       <CookieConsent />
+      
     </div>
   );
 };
