@@ -23,7 +23,12 @@ const ContactForm = () => {
     setError("");
 
     try {
-      const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+      console.log("VITE_API_URL:", import.meta.env.VITE_API_URL);
+
+      const API_URL =
+        import.meta.env.VITE_API_URL || "http://localhost:5000";
+
+      console.log("Using API:", API_URL);
       const response = await fetch(`${API_URL}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
