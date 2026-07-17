@@ -466,3 +466,14 @@ select optgroup option {
   animation: borderRotate 8s ease-in-out infinite;
   box-shadow: 0 0 50px rgba(184,77,255,0.25), 0 0 80px rgba(217,70,239,0.15);
 }
+/* --- Standalone (installed) mode --- */
+.standalone-mode .container {
+  max-width: 1400px !important; /* wider than default 1280px */
+}
+.standalone-mode .hero {
+  min-height: 80vh; /* slightly shorter for desktop feel */
+}
+.standalone-mode .section {
+  padding-block: 60px; /* more spacing */
+}
+/* you can add more desktop‑like adjustments as needed */
