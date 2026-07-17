@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaTimes } from 'react-icons/fa';
-import logo from '../../../assets/images/logo.png';
+import logo from '../../assets/images/logo.png'; // 👈 corrected path
 import { usePWAInstall } from '../../hooks/usePWAInstall';
 
 const PWAInstallPrompt = () => {
