@@ -362,13 +362,32 @@ footer {
 iframe {
   loading: lazy;
 }
-/* --- Mobile safe area & FAB/BackToTop layout --- */
-
-/* Add bottom padding to avoid content being hidden by floating buttons */
+/* ---------- Mobile Footer Fix ---------- */
 @media (max-width: 768px) {
+
+  html,
   body {
-    padding-bottom: 100px; /* Space for FAB + BackToTop */
+    margin: 0;
+    padding: 0;
+    padding-bottom: env(safe-area-inset-bottom, 0);
+    overflow-x: hidden;
   }
+
+  .footer-root {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .footer-mobile-wrapper {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .footer-mobile-wrapper > div:last-child {
+    margin-bottom: 0 !important;
+    padding-bottom: 10px !important;
+  }
+
 }
 
 /* Hide BackToTop when FAB is expanded */

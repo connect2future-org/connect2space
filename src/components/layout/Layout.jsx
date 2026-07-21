@@ -10,6 +10,7 @@ import PageLoader from "../common/PageLoader";
 import BackToTop from "../common/BackToTop";
 import CookieConsent from "../common/CookieConsent";
 import PWAInstallPrompt from '../common/PWAInstallPrompt';
+import AnimatedBackground from '../common/AnimatedBackground'; // 👈 new import
 import { motion } from "framer-motion";
 
 const Layout = ({ children }) => {
@@ -17,6 +18,9 @@ const Layout = ({ children }) => {
 
   return (
     <div className="bg-background text-text min-h-screen font-body antialiased relative overflow-x-hidden">
+      {/* Animated wings and glows – behind everything */}
+      <AnimatedBackground />
+
       {/* Background Orbs */}
       <div className="fixed inset-0 -z-10 pointer-events-none">
         <motion.div
