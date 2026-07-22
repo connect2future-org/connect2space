@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import React from 'react';
 
 const ServiceCard = ({ service }) => {
   const Icon = service.icon;
@@ -30,4 +31,4 @@ const ServiceCard = ({ service }) => {
   );
 };
 
-export default ServiceCard;
+export default React.memo(ServiceCard);

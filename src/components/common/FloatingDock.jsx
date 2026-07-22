@@ -68,7 +68,7 @@ const FloatingDock = () => {
 
   // --- MOBILE ONLY: expandable Floating Action Button ---
   const MobileFab = () => (
-    <div className="md:hidden fixed bottom-6 right-4 z-50 flex flex-col items-end">
+    <div className="md:hidden fixed z-50 flex flex-col items-end" style={{ bottom: '24px', right: '16px' }}>
       <AnimatePresence>
         {isOpen && (
           <motion.div

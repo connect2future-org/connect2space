@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import React from 'react';
 
 const GalleryCard = ({ item }) => {
   return (
@@ -31,4 +32,4 @@ const GalleryCard = ({ item }) => {
   );
 };
 
-export default GalleryCard;
+export default React.memo(GalleryCard);

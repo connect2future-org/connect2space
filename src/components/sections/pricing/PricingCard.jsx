@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { FaCheck } from "react-icons/fa";
 import { PHONE_NUMBER } from "../../../utils/contact";
+import React from 'react';
 
 // Map gradient colors per plan
 const gradientMap = {
@@ -71,4 +72,4 @@ const PricingCard = ({ plan }) => {
   );
 };
 
-export default PricingCard;
+export default React.memo(PricingCard);

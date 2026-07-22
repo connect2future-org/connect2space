@@ -13,8 +13,10 @@ function App() {
   const location = useLocation();
   const lenisRef = useRef(null);
 
-  // Initialize Lenis
   useEffect(() => {
+    const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    if (isTouch) return; // native scroll on mobile
+
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -34,7 +36,6 @@ function App() {
     };
   }, []);
 
-  // Scroll to top on route change, and handle hash navigation
   useEffect(() => {
     const lenis = lenisRef.current;
     if (!lenis) return;
@@ -44,7 +45,6 @@ function App() {
       setTimeout(() => {
         const element = document.getElementById(targetId);
         if (element) {
-          // Offset for navbar height (approx 80px)
           lenis.scrollTo(element, { offset: -100 });
         } else {
           lenis.scrollTo(0, { immediate: true });
@@ -72,7 +72,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/services/:id" element={<ServiceDetail />} />
         <Route path="/spaces/:id" element={<SpaceDetail />} />
-        {/* Fallback route – redirect to home */}
         <Route path="*" element={<Home />} />
       </Routes>
     </Layout>

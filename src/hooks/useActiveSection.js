@@ -1,14 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
+import { throttle } from 'lodash'; // or you can implement a simple throttle function
 
 const sections = ['home', 'workspace', 'services', 'about', 'gallery', 'pricing', 'contact'];
 
 export const useActiveSection = () => {
   const [activeSection, setActiveSection] = useState('home');
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + 150; // offset for navbar
-
+  const handleScroll = useCallback(
+    throttle(() => {
+      const scrollPosition = window.scrollY + 150;
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -20,12 +20,15 @@ export const useActiveSection = () => {
           }
         }
       }
-    };
+    }, 100),
+    []
+  );
 
+  useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // initial check
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [handleScroll]);
 
   return activeSection;
 };
