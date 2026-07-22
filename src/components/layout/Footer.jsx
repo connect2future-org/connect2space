@@ -44,7 +44,7 @@ const Footer = () => {
                 </p>
                 <div className="flex gap-3 text-lg text-muted">
                   <a
-                    href="https://www.instagram.com/the_c2f_?igsh=MWpvMDF4anE5bnA3eQ=="
+                    href="https://www.instagram.com/the_c2f_?utm_source=qr&igsh=MWpvMDF4anE5bnA3eQ=="
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-primary transition-colors duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(217,70,239,0.5)]"
@@ -161,7 +161,7 @@ const Footer = () => {
                 Premium Creative Workspace, Podcast Studio, Meeting Rooms and Event Space.
               </p>
               <div className="flex gap-3 text-base text-muted mt-0">
-                <a href="https://www.instagram.com/the_c2f_?igsh=MWpvMDF4anE5bnA3eQ==" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors duration-300" aria-label="Instagram"><FaInstagram /></a>
+                <a href="https://www.instagram.com/the_c2f_?utm_source=qr&igsh=MWpvMDF4anE5bnA3eQ==" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors duration-300" aria-label="Instagram"><FaInstagram /></a>
                 <a href="https://www.linkedin.com/company/connect2future/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors duration-300" aria-label="LinkedIn"><FaLinkedin /></a>
                 <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors duration-300" aria-label="WhatsApp"><FaWhatsapp /></a>
               </div>

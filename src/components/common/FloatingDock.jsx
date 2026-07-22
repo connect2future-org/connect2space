@@ -41,7 +41,7 @@ const FloatingDock = () => {
         <FaWhatsapp className="text-white text-2xl" />
       </a>
       <a
-        href="https://www.instagram.com/the_c2f_?igsh=MWpvMDF4anE5bnA3eQ=="
+        href="https://www.instagram.com/the_c2f_?utm_source=qr&igsh=MWpvMDF4anE5bnA3eQ=="
         target="_blank"
         rel="noopener noreferrer"
         className="bg-gradient-to-tr from-purple-600 to-pink-500 p-3 rounded-full shadow-lg hover:scale-110 transition-all duration-300 hover:shadow-pink-500/50"
@@ -89,7 +89,7 @@ const FloatingDock = () => {
               WhatsApp
             </a>
             <a
-              href="https://www.instagram.com/the_c2f_?igsh=MWpvMDF4anE5bnA3eQ=="
+              href="https://www.instagram.com/the_c2f_?utm_source=qr&igsh=MWpvMDF4anE5bnA3eQ=="
               target="_blank"
               rel="noopener noreferrer"
               onClick={closeMenu}
