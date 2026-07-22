@@ -4,7 +4,6 @@ import WorkspaceShowcase from "../components/sections/workspace/WorkspaceShowcas
 
 const Services = lazy(() => import("../components/sections/services/Services"));
 const About = lazy(() => import("../components/sections/about/About"));
-const Experience = lazy(() => import("../components/sections/experience/Experience"));
 const Gallery = lazy(() => import("../components/sections/gallery/Gallery"));
 const Pricing = lazy(() => import("../components/sections/pricing/Pricing"));
 const Amenities = lazy(() => import("../components/sections/amenities/Amenities"));
@@ -26,7 +25,6 @@ const Home = () => {
       <Suspense fallback={<Loader />}>
         <Services />
         <About />
-        <Experience />
         <Gallery />
         <Pricing />
         <Amenities />
