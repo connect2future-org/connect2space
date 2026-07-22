@@ -3,9 +3,9 @@ import wing from "../../assets/images/logo-wing.png";
 
 const isTouch = typeof window !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0);
 
-// Fewer wings on mobile
-const wingCount = isTouch ? 8 : 24;
-const sparkleCount = isTouch ? 15 : 50;
+// Fewer wings – 12 on desktop, 6 on mobile
+const wingCount = isTouch ? 6 : 12;
+const sparkleCount = isTouch ? 15 : 30; // also reduced sparkles slightly
 
 const wings = Array.from({ length: wingCount }, (_, i) => ({
   x: `${Math.random() * 90 + 5}%`,
@@ -19,7 +19,7 @@ export default function AnimatedBackground() {
     <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
       <div className="absolute inset-0 bg-transparent" />
 
-      {/* Blurs reduced on mobile */}
+      {/* Soft glows – reduced blur on mobile */}
       <motion.div
         className={`absolute -top-40 -left-40 w-[700px] h-[700px] rounded-full blur-[${isTouch ? '60px' : '140px'}]`}
         style={{
@@ -54,7 +54,7 @@ export default function AnimatedBackground() {
         }}
       />
 
-      {/* Wings – fewer and lower opacity on mobile */}
+      {/* Wings – reduced count */}
       {wings.map((w, i) => (
         <motion.img
           key={i}
@@ -81,7 +81,7 @@ export default function AnimatedBackground() {
         />
       ))}
 
-      {/* Sparkles – fewer on mobile */}
+      {/* Sparkles – slightly reduced */}
       {[...Array(sparkleCount)].map((_, i) => (
         <motion.div
           key={i}
@@ -106,7 +106,7 @@ export default function AnimatedBackground() {
         />
       ))}
 
-      {/* Mesh Wave – slightly less visible on mobile */}
+      {/* Bottom Mesh Wave */}
       <svg
         className="absolute bottom-0 w-full"
         height={isTouch ? 120 : 260}
