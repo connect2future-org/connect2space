@@ -18,6 +18,9 @@ connectDB();
 
 const app = express();
 
+// Trust Nginx reverse proxy headers (X-Forwarded-For, etc.)
+app.set("trust proxy", 1);
+
 // Security
 app.use(helmet());
 
