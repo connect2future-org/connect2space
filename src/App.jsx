@@ -36,24 +36,112 @@ function App() {
     };
   }, []);
 
-  useEffect(() => {
-    const lenis = lenisRef.current;
-    if (!lenis) return;
+  // Handle Home-section navigation from both:
+  // 1. Home page
+  // 2. Space/Service detail pages
+  //
+  // Works with:
+  // - Desktop + Lenis
+  // - Mobile + native browser scrolling
+  // - Lazy-loaded Home sections
 
-    if (location.hash) {
-      const targetId = location.hash.replace('#', '');
-      setTimeout(() => {
-        const element = document.getElementById(targetId);
-        if (element) {
-          lenis.scrollTo(element, { offset: -100 });
-        } else {
-          lenis.scrollTo(0, { immediate: true });
-        }
-      }, 300);
-    } else {
-      lenis.scrollTo(0, { immediate: true });
+  useEffect(() => {
+    const hash = location.hash;
+
+    // When opening a detail page without a hash,
+    // always start from the top.
+    if (!hash) {
+      if (location.pathname !== "/") {
+        const resetScroll = () => {
+          window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "auto",
+          });
+
+          if (lenisRef.current) {
+            lenisRef.current.scrollTo(0, {
+              immediate: true,
+            });
+          }
+        };
+
+        requestAnimationFrame(resetScroll);
+      }
+
+      return;
     }
-  }, [location]);
+
+    const targetId = hash.substring(1);
+
+    // Home should always start at the absolute top.
+    // Do not apply the navbar offset to Home.
+    if (targetId === "home") {
+      requestAnimationFrame(() => {
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: "auto",
+        });
+
+        if (lenisRef.current) {
+          lenisRef.current.scrollTo(0, {
+            immediate: true,
+          });
+        }
+      });
+
+      return;
+    }
+
+    let attempts = 0;
+    const maxAttempts = 120;
+
+    const findAndScroll = () => {
+      const element = document.getElementById(targetId);
+
+      // Lazy-loaded sections may not exist immediately.
+      if (!element) {
+        attempts += 1;
+
+        if (attempts < maxAttempts) {
+          requestAnimationFrame(findAndScroll);
+        }
+
+        return;
+      }
+
+      const navbarOffset = 100;
+
+      const targetTop =
+        element.getBoundingClientRect().top +
+        window.pageYOffset -
+        navbarOffset;
+
+      const finalPosition = Math.max(0, targetTop);
+
+      // Desktop: use Lenis.
+      if (lenisRef.current) {
+        lenisRef.current.scrollTo(finalPosition, {
+          duration: 1.1,
+        });
+      } else {
+        // Mobile/tablet: use native smooth scrolling.
+        window.scrollTo({
+          top: finalPosition,
+          left: 0,
+          behavior: "smooth",
+        });
+      }
+    };
+
+    // Give React one frame to render the Home page.
+    requestAnimationFrame(findAndScroll);
+
+    return () => {
+      attempts = maxAttempts;
+    };
+  }, [location.pathname, location.hash]);
 
   return (
     <Layout>

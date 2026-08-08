@@ -29,22 +29,24 @@ const SpaceDetail = () => {
   ];
 
   return (
-    <div className="section pt-[120px]">
+    <div className="section !pt-[120px]">
       <div className="container">
         {/* Hero Banner */}
+        {/* Compact Space Hero Banner */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="glass rounded-3xl p-8 md:p-12 text-center relative overflow-hidden"
+          className="glass rounded-3xl px-6 py-7 md:px-10 md:py-8 text-center relative overflow-hidden"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10" />
+
           <div className="relative z-10">
-            <span className="badge">Space</span>
-            <h1 className="heading-lg mt-4">
+            <h1 className="heading-lg">
               <span className="gradient-text">{space.title}</span>
             </h1>
-            <p className="text-lg text-muted max-w-2xl mx-auto mt-4">
+
+            <p className="text-lg text-muted max-w-2xl mx-auto mt-3">
               Explore our premium {space.title.toLowerCase()} – designed for creativity and productivity.
             </p>
           </div>

@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
+
 import DesktopMenu from "./DesktopMenu";
 import MobileMenu from "./MobileMenu";
 
@@ -71,7 +72,6 @@ const Navbar = () => {
             <div className="hidden lg:flex items-center">
               <Link
                 to="/#contact"
-                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 className="btn btn-primary text-sm px-5 py-1.5"
               >
                 Book Your Space Now
