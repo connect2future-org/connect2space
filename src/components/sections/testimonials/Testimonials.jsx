@@ -3,8 +3,8 @@ import { FaQuoteLeft, FaGem } from "react-icons/fa";
 
 const leadershipData = [
   {
-    name: "Mr. Karthik",
-    role: "Founder & CEO",
+    name: "Karthik Gowda",
+    role: "Managing Director",
     avatar: "K",
     gradient: "from-pink-500 to-purple-500",
     nameGradient: "from-pink-500 via-rose-500 to-purple-500",
@@ -12,7 +12,7 @@ const leadershipData = [
   },
   {
     name: "Vikas Gowda J A",
-    role: "Co-Founder",
+    role: "Founder & CEO",
     avatar: "V",
     gradient: "from-purple-500 to-blue-500",
     nameGradient: "from-purple-500 via-violet-500 to-blue-500",
