@@ -3,7 +3,7 @@ import { FaQuoteLeft, FaGem } from "react-icons/fa";
 
 const leadershipData = [
   {
-    name: "Karthik Gowda",
+    name: "Karthik Gowda J A",
     role: "Managing Director",
     avatar: "K",
     gradient: "from-pink-500 to-purple-500",
